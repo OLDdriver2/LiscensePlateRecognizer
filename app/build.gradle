@@ -15,8 +15,16 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+
     }
     buildToolsVersion '27.0.3'
+    sourceSets{
+        main{
+            jniLibs.srcDirs = ['src/main/libs']
+
+        }
+    }
+
 }
 
 dependencies {
@@ -27,4 +35,5 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     implementation 'com.otaliastudios:cameraview:1.5.0'
+    implementation project(':openCVLibrary330')
 }
